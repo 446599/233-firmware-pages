@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f5f3ee">
+  <meta name="description" content="233 是为 Snapmaker U1 制作的社区集成固件。了解四台 ACE、16 槽耗材管理、233 Screen 和原厂固件的区别。">
+  <title>233 固件 · Snapmaker U1</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#" aria-label="233 固件首页">
+        <span class="brand-mark" aria-hidden="true">233</span>
+        <span class="brand-text"><strong>233 固件</strong><small>FOR SNAPMAKER U1</small></span>
+      </a>
+      <nav aria-label="主导航">
+        <a href="#features">功能</a>
+        <a href="#compare">原厂对比</a>
+        <a href="#tested">验证记录</a>
+      </nav>
+      <a class="github-link" href="https://github.com/446599/233-firmware-pages">GitHub</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span aria-hidden="true"></span> SNAPMAKER U1 社区固件</p>
+        <h1 id="hero-title">四个喷头，<br><em>十六个料槽。</em></h1>
+        <p class="hero-summary">通过 MultiACE 接入最多四台 ACE 料仓。装料、换料、配色预检和烘干，都在同一套流程里。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#compare">和原厂比一比</a>
+          <a class="button secondary" href="#screens">看实机界面</a>
+        </div>
+        <p class="hero-meta">PAXX 系统底座 <span>·</span> 233 Screen <span>·</span> MultiACE</p>
+      </div>
+      <figure class="hero-art">
+        <img src="assets/filament-hero.webp" width="1440" height="960" alt="从陶土橙到鼠尾草绿的多色 3D 打印耗材弧线概念图" fetchpriority="high">
+        <figcaption><span>耗材色谱</span><small>主题概念图</small></figcaption>
+      </figure>
+    </section>
+
+    <section id="features" class="section shell" aria-labelledby="features-title">
+      <div class="section-heading">
+        <h2 id="features-title">料仓、喷头，一眼看清。</h2>
+        <p>按料仓查每卷料的颜色和材质，按喷头看正在用哪一路。打印前用同一份耗材资料做配色预检。</p>
+      </div>
+      <div class="route-panel">
+        <div class="route-list">
+          <h3>4 台 ACE × 4 槽</h3>
+          <p>点选一个色块，查看示例料路。</p>
+          <div id="slot-grid" class="slot-grid" aria-label="16 槽料路示例"></div>
+          <noscript><p>每台 ACE 有 4 个槽。4 台合计 16 槽，由 4 个喷头使用。</p></noscript>
+        </div>
+        <div class="route-output">
+          <p class="route-caption">料路示例</p>
+          <div id="route-detail" class="route-detail" aria-live="polite">
+            <span id="selected-slot">ACE 1 · 槽 1</span>
+            <i aria-hidden="true"></i>
+            <strong id="selected-head">喷头 1</strong>
+          </div>
+          <p id="selected-material" class="route-material">PLA · 陶土橙</p>
+          <p class="route-note">示例按同槽号接到同一喷头。实际映射以料管接法和 MultiACE 设置为准。</p>
+        </div>
+      </div>
+      <div class="feature-line">
+        <article><span class="feature-key">换料流程</span><h3>退到位，再送下一卷</h3><p>保存已测的料路长度，进料用喷头传感器确认。可恢复的短退和送料异常，按同一路径有限重试。</p></article>
+        <article><span class="feature-key">55 °C</span><h3>边烘边打</h3><p>打印前选择开启，由 ACE 在打印期间烘干。打印结束或取消时随任务关闭。</p></article>
+        <article><span class="feature-key">局域网网页</span><h3>电脑也能管耗材</h3><p>在 MultiACE 编辑颜色和材质，在 Fluidd 的耗材管理页查看槽位，也能在浏览器看机舱实时画面。</p></article>
+      </div>
+    </section>
+
+    <section id="screens" class="section showcase" aria-labelledby="screens-title">
+      <div class="shell">
+        <div class="section-heading">
+          <h2 id="screens-title">两块屏，同一份耗材数据。</h2>
+          <p>屏幕上选好的颜色会出现在网页上。真实空槽继续显示为空。</p>
+        </div>
+        <div class="showcase-grid">
+          <figure class="screen-tile">
+            <div class="image-well device-well"><img src="assets/screen-materials.png" width="480" height="320" loading="lazy" alt="233 Screen 实机耗材页，按 ACE 或喷头查看并显示各槽色块"></div>
+            <figcaption><strong>233 Screen</strong><span>实机触屏 · 480 × 320</span></figcaption>
+          </figure>
+          <figure class="screen-tile">
+            <div class="image-well web-well"><img src="assets/filament-manager.webp" width="1050" height="421" loading="lazy" alt="Fluidd 耗材管理实测截图，四台 ACE 显示同样的材质与颜色"></div>
+            <figcaption><strong>Fluidd 耗材管理</strong><span>实机网页 · 四台 ACE 一览</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="compare" class="section shell" aria-labelledby="compare-title">
+      <div class="section-heading">
+        <h2 id="compare-title">原厂 U1 和 233 有什么不同？</h2>
+        <p>两者都使用 U1 的四个独立喷头。233 的扩展主要在外接料仓、换料流程和操作界面。</p>
+      </div>
+      <div class="table-wrap" role="region" aria-label="原厂与 233 功能对比" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">功能</th><th scope="col">原厂 U1 <span>V2.1.2</span></th><th scope="col" class="ours">233 固件 <span>基于 PAXX</span></th></tr></thead>
+          <tbody>
+            <tr><th scope="row">物理供料</th><td>4 个独立喷头，单次任务可用 4 卷实料</td><td>4 个独立喷头，接入最多 4 台 ACE、16 个槽</td></tr>
+            <tr><th scope="row">多色工作流</th><td>Snapmaker Orca 可用 Full Spectrum Beta 混出更多视觉色</td><td>MultiACE 在外接槽位之间换实料，打印前可做颜色和料路预检</td></tr>
+            <tr><th scope="row">耗材资料</th><td>支持读取 Snapmaker 官方耗材的 RFID，也可手动设置</td><td>按 ACE 或喷头查看，屏幕设置的颜色和材质可同步到网页及配色预检</td></tr>
+            <tr><th scope="row">操作界面</th><td>原厂触屏、Snapmaker App 和 Snapmaker Orca</td><td>233 暖色触屏、MultiACE 网页和 Fluidd 耗材管理</td></tr>
+            <tr><th scope="row">ACE 烘干</th><td>使用原厂供料架，烘干由外部设备管理</td><td>打印前可选 55 °C 烘干，跟随任务启停</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="sources">原厂功能参考 <a href="https://wiki.snapmaker.com/en/FAQ/u1">Snapmaker U1 FAQ</a> 与 <a href="https://wiki.snapmaker.com/en/snapmaker_u1/firmware/release_notes/v212">V2.1.2 更新记录</a>。</p>
+    </section>
+
+    <section id="tested" class="section shell" aria-labelledby="tested-title">
+      <div class="validation">
+        <div class="validation-copy">
+          <p class="eyebrow">2026 年 11 月 24 日</p>
+          <h2 id="tested-title">这版测到了哪里。</h2>
+          <p>PAXX 整合版已完成开机检查。实机触屏、料仓和网页数据一致，网页补丁更新后复测了配色预检。</p>
+        </div>
+        <dl class="validation-results">
+          <div><dt>料仓识别</dt><dd>4 台在线，16 槽可见</dd></div>
+          <div><dt>多色文件预检</dt><dd>识别 16 色，12 个有料槽可参与配色</dd></div>
+          <div><dt>机舱实时视频</dt><dd>WebRTC 实测 1080p · 约 30 fps</dd></div>
+          <div><dt>完整 16 色打印</dt><dd>待完成新版本的整场实测</dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <div><strong>233 固件</strong><p>面向 Snapmaker U1 的社区集成项目。</p></div>
+    <div class="footer-links" aria-label="上游项目">
+      <a href="https://github.com/paxx12-snapmaker-u1/SnapmakerU1-Extended-Firmware">PAXX</a>
+      <a href="https://github.com/decay71/multiACE">multiACE</a>
+      <a href="https://github.com/prestonbrown/helixscreen">HelixScreen</a>
+    </div>
+  </footer>
+</body>
+</html>
