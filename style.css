@@ -109,17 +109,21 @@ h2 { font: 760 clamp(2.2rem, 4vw, 3.66rem)/1.18 var(--heading); letter-spacing: 
 .feature-line h3 { font-size: 1.15rem; margin-bottom: 6px; letter-spacing: -.02em; }
 .feature-line p { font-size: .95rem; color: var(--muted); }
 .controls-line { margin-top: 0; }
-.workflow {
-  display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(24px, 4vw, 58px);
-  margin-top: 28px; padding: clamp(22px, 3.6vw, 45px); border-radius: 18px;
-  background: var(--selection);
+.drying-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+.drying-options {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: clamp(20px, 3.3vw, 38px); border-radius: 17px;
+  border: 1px solid #D8C0B1; background: var(--selection);
 }
-.workflow-intro h3 { font: 760 clamp(1.7rem, 2.65vw, 2.65rem)/1.2 var(--heading); }
-.workflow-intro p { color: var(--muted); margin-top: 9px; }
-.workflow-list article + article { border-top: 1px solid #CCB4A6; margin-top: 11px; padding-top: 11px; }
-.workflow-list h4 { margin: 0 0 3px; }
-.workflow-list p { color: #595148; font-size: .94rem; }
-
+.drying-options h3, .material-cards h3 { font-size: 1.15rem; margin: 0 0 5px; }
+.drying-options p, .material-cards p { color: #595148; }
+.drying-options article + article { border-top: 1px solid #CCB4A6; margin-top: 13px; padding-top: 13px; }
+.material-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+.material-cards article {
+  padding: clamp(20px, 3.3vw, 38px); background: var(--card);
+  border: 1px solid var(--line); border-radius: 17px;
+}
+.material-cards h3 { color: var(--primary); }
 
 .showcase { background: var(--overlay); border-block: 1px solid color-mix(in srgb, var(--line), transparent 40%); }
 .showcase-grid { display: grid; grid-template-columns: .88fr 1.12fr; gap: 16px; }
@@ -192,7 +196,7 @@ tbody tr:last-child > * { border-bottom: 0; }
   .hero h1 { font-size: clamp(3rem, 11vw, 4.8rem); margin-block: 17px; }
   .hero-actions { margin-block: 19px; }
   .hero-interface { border-radius: 18px; }
-  .route-panel, .feature-line, .showcase-grid, .validation, .workflow { grid-template-columns: 1fr; }
+  .route-panel, .feature-line, .showcase-grid, .validation, .drying-layout, .material-cards { grid-template-columns: 1fr; }
   .feature-line article, .feature-line article:first-child { padding: 16px 1px; }
   .feature-line article + article { border-left: 0; border-top: 1px solid var(--line); }
   .image-well { min-height: auto; }

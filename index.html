@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#f5f3ee">
-  <meta name="description" content="233 是面向 Snapmaker U1 的社区固件。查看重排的打印控制、机身与网页耗材同步、人性化换料优化，以及与原厂固件的区别。">
+  <meta name="description" content="233 是面向 Snapmaker U1 的社区固件。接上兼容的 ACE 后可在屏幕上操作 MultiACE 进料、退料、烘干，支持转动烘干、RFID 读取与余量估算。">
   <title>233 固件 · Snapmaker U1</title>
   <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=ace-controls">
   <script src="main.js" defer></script>
 </head>
 <body>
@@ -19,7 +19,8 @@
         <span class="brand-text"><strong>233 固件</strong><small>FOR SNAPMAKER U1</small></span>
       </a>
       <nav aria-label="主导航">
-        <a href="#features">功能</a>
+        <a href="#features">触屏操控</a>
+        <a href="#drying">烘干</a>
         <a href="#compare">原厂对比</a>
         <a href="#tested">验证记录</a>
       </nav>
@@ -31,55 +32,75 @@
     <section class="hero shell" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow"><span aria-hidden="true"></span> SNAPMAKER U1 社区固件</p>
-        <h1 id="hero-title">打印控制，<br><em>顺手一点。</em></h1>
-        <p class="hero-summary">把模型预览、进度、暂停和停止放在同一页。耗材在屏幕上设一次，打开网页也能看见。</p>
+        <h1 id="hero-title">接上 ACE，<br><em>就能用。</em></h1>
+        <p class="hero-summary">233 已集成 MultiACE。按配套接法连好 ACE 和料管，无需手改配置，进料、退料和烘干都能直接在打印机屏幕上点。</p>
         <div class="hero-actions">
-          <a class="button primary" href="#features">看常用操作</a>
+          <a class="button primary" href="#features">看触屏怎么操作</a>
           <a class="button secondary" href="#compare">和原厂比一比</a>
         </div>
         <p class="hero-meta">PAXX 系统底座 <span>·</span> 233 Screen <span>·</span> MultiACE</p>
       </div>
       <figure class="hero-interface">
         <div class="hero-device">
-          <img src="assets/print-controls.png" width="480" height="320" alt="233 打印界面演示。模型居中，进度条横贯页面，暂停、停止打印、跳过模型和更多在底部并排。" fetchpriority="high">
+          <img src="assets/screen-materials.png" width="480" height="320" alt="233 Screen 实机耗材页，可按 ACE 或喷头选槽，底部提供进料、从喷头退出、退出 ACE 和烘干按钮。" fetchpriority="high">
         </div>
-        <figcaption><strong>233 Screen</strong><span>打印界面演示 · 480 × 320</span></figcaption>
+        <figcaption><strong>233 Screen</strong><span>MultiACE 实机触屏 · 480 × 320</span></figcaption>
       </figure>
     </section>
 
     <section id="features" class="section shell" aria-labelledby="features-title">
       <div class="section-heading">
-        <h2 id="features-title">常用操作，都在手边。</h2>
-        <p>在打印页上能看到模型、进度和温度，也能直接执行最常用的操作。</p>
+        <h2 id="features-title">在屏幕上管 MultiACE。</h2>
+        <p>点开「耗材」，按料仓选槽，或按喷头看当前用的是哪一路。</p>
       </div>
       <div class="feature-line controls-line">
-        <article><h3>模型和进度看得清</h3><p>模型预览放在中央，进度条从左到右完整显示。喷头、热床和仓温放在同一行。</p></article>
-        <article><h3>暂停旁边就是停止</h3><p>暂停和停止打印并排，按键尺寸统一，跳过模型也有独立入口。</p></article>
-        <article><h3>灯光收进「更多」</h3><p>需要照明时，从打印页的「更多」打开机舱灯。首页也有灯光开关。</p></article>
+        <article><h3>进料</h3><p>选中料槽，点「进料」。机器用喷头传感器确认到料，遇到可恢复的送料异常会沿原槽有限重试。</p></article>
+        <article><h3>退料</h3><p>需要从喷头退回时点「从喷头退出」。要取走料卷时，用「退出 ACE」把料退出料仓。</p></article>
+        <article><h3>烘干</h3><p>在对应 ACE 上点「烘干」，就能选预设、调整温度和时长，也能查看仓内温湿度与运行状态。</p></article>
       </div>
-      <div class="workflow">
-        <div class="workflow-intro">
-          <h3>把重复操作省下来。</h3>
-          <p>从配色、换料到烘干，少来回切换页面，也少从头再来。</p>
+    </section>
+
+    <section id="drying" class="section showcase" aria-labelledby="drying-title">
+      <div class="shell">
+        <div class="section-heading">
+          <h2 id="drying-title">按需要烘干。</h2>
+          <p>潮了可以单独烘，打印时也能选边烘边打。支持转动的料仓还可以让料盘在烘干期间转动。</p>
         </div>
-        <div class="workflow-list">
-          <article><h4>耗材设一次</h4><p>按料仓看每卷料，按喷头看它接的是哪一路。屏幕选好的颜色和材质也能用于网页配色预检。</p></article>
-          <article><h4>换料按原路重试</h4><p>进料以喷头到料为准。测量偶尔缺读时仍能依据传感器判断。遇到可恢复的短退和送料异常，沿原槽有限重试。</p></article>
-          <article><h4>烘干随任务启停</h4><p>打印前可选 55 °C 边烘边打。打印结束或取消时，随任务关闭。</p></article>
+        <div class="drying-layout">
+          <figure class="screen-tile">
+            <div class="image-well device-well"><img src="assets/screen-dryer.png" width="480" height="320" loading="lazy" alt="233 Screen 的 ACE 烘干页面，有耗材预设、温度、时长、回卷槽位和开始、停止按钮。"></div>
+            <figcaption><strong>ACE 烘干</strong><span>触屏操作示例</span></figcaption>
+          </figure>
+          <div class="drying-options">
+            <article><h3>单独烘干</h3><p>选耗材预设，也可以手动调整温度和时长。从同一页开始或停止。</p></article>
+            <article><h3>转动烘干</h3><p>支持的 ACE 料仓可选择要转动的料盘，烘干过程中让料盘间歇转动。</p></article>
+            <article><h3>边烘边打</h3><p>打印前可选 55 °C 烘干。打印结束或取消时，烘干随任务关闭。</p></article>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <section id="materials" class="section shell" aria-labelledby="materials-title">
+      <div class="section-heading">
+        <h2 id="materials-title">每卷料的信息，看得更清楚。</h2>
+        <p>读标签、核对颜色、看余量，都围绕同一个料槽展开。</p>
+      </div>
+      <div class="material-cards">
+        <article><h3>优化的 RFID 读取</h3><p>从兼容标签读取材质、颜色等资料，并关联到对应料槽。标签资料不全时，可以在屏幕上补录。</p></article>
+        <article><h3>按料盘估算余量</h3><p>用有效的绕线测量和料盘规格估算剩余耗材重量。读数够用时显示约剩多少克，资料不足时保留未知状态。</p></article>
       </div>
     </section>
 
     <section id="screens" class="section showcase" aria-labelledby="screens-title">
       <div class="shell">
         <div class="section-heading">
-          <h2 id="screens-title">屏幕和网页，信息同步。</h2>
-          <p>在机器旁用触屏操作，在电脑上用网页查看。选中的料槽和已挂到喷头的料各有标记。</p>
+          <h2 id="screens-title">常用控制，也摆得顺手。</h2>
+          <p>打印页集中显示模型、进度和温度，暂停与停止并排。屏幕选好的耗材颜色，也能在网页上看见。</p>
         </div>
         <div class="showcase-grid">
           <figure class="screen-tile">
-            <div class="image-well device-well"><img src="assets/screen-materials.png" width="480" height="320" loading="lazy" alt="233 Screen 实机耗材页，按 ACE 或喷头查看并显示各槽色块"></div>
-            <figcaption><strong>233 Screen</strong><span>实机触屏 · 480 × 320</span></figcaption>
+            <div class="image-well device-well"><img src="assets/print-controls.png" width="480" height="320" loading="lazy" alt="233 打印界面演示。模型居中，进度条横贯页面，暂停和停止打印在底部并排。"></div>
+            <figcaption><strong>打印控制</strong><span>触屏界面演示 · 480 × 320</span></figcaption>
           </figure>
           <figure class="screen-tile">
             <div class="image-well web-well"><img src="assets/filament-manager.webp" width="1050" height="421" loading="lazy" alt="Fluidd 耗材管理实测截图，四台 ACE 显示同样的材质与颜色"></div>
@@ -92,18 +113,18 @@
     <section id="compare" class="section shell" aria-labelledby="compare-title">
       <div class="section-heading">
         <h2 id="compare-title">原厂 U1 和 233 有什么不同？</h2>
-        <p>主要区别在常用按钮的位置、耗材资料怎么同步，以及换料遇到问题后的处理方式。</p>
+        <p>原厂提供 U1 的供料和打印流程，233 把外接 ACE 的常用操作直接放进机身触屏。</p>
       </div>
       <div class="table-wrap" role="region" aria-label="原厂与 233 功能对比" tabindex="0">
         <table>
           <thead><tr><th scope="col">功能</th><th scope="col">原厂 U1 <span>V2.1.2</span></th><th scope="col" class="ours">233 固件 <span>基于 PAXX</span></th></tr></thead>
           <tbody>
-            <tr><th scope="row">打印控制</th><td>原厂触屏的任务与控制页面</td><td>居中的模型预览、完整进度条，暂停和停止并排</td></tr>
-            <tr><th scope="row">网页与远程查看</th><td>Snapmaker App 和 Snapmaker Orca</td><td>局域网内用 Fluidd 看机舱画面，用 MultiACE 管理耗材</td></tr>
-            <tr><th scope="row">耗材设置</th><td>读取 Snapmaker 官方耗材 RFID，也可手动设置</td><td>按喷头或 ACE 查看，颜色和材质同步到网页与配色预检</td></tr>
-            <tr><th scope="row">进退料</th><td>原厂送料器支持自动和手动装料</td><td>保存已测的料路长度，用喷头传感器确认进料，可恢复的异常沿原槽有限重试</td></tr>
-            <tr><th scope="row">打印时烘干</th><td>使用原厂供料架，烘干由外部设备管理</td><td>打印前可选 55 °C，烘干跟随任务启停</td></tr>
-            <tr><th scope="row">外接料仓</th><td>4 个独立喷头，原厂 Full Spectrum 可用实料混出更多视觉色</td><td>通过 MultiACE 可接多个 ACE 料仓，在实际槽位之间换料</td></tr>
+            <tr><th scope="row">连接和上手</th><td>使用 U1 原厂供料架和送料器</td><td>配套方案预置 MultiACE，接好兼容料仓和料路即可在屏幕上操作</td></tr>
+            <tr><th scope="row">屏幕进退料</th><td>通过触屏控制原厂送料器，支持自动和手动装料</td><td>按 ACE 或喷头选路，直接进料、从喷头退出或退出 ACE</td></tr>
+            <tr><th scope="row">烘干</th><td>可搭配独立烘干设备</td><td>屏幕控制 ACE 烘干，兼容机型支持转动烘干，还可选 55 °C 边烘边打</td></tr>
+            <tr><th scope="row">RFID 与余量</th><td>原厂供料架识别兼容的 Snapmaker RFID 耗材</td><td>读取兼容标签并关联到料槽，结合有效测量和料盘规格估算余量</td></tr>
+            <tr><th scope="row">打印控制</th><td>原厂触屏的任务与控制页面</td><td>模型与进度同屏，暂停和停止并排，机舱灯收进「更多」</td></tr>
+            <tr><th scope="row">网页管理</th><td>Snapmaker App 和 Snapmaker Orca</td><td>局域网内查看耗材颜色、材质和槽位，也能看机舱实时视频</td></tr>
           </tbody>
         </table>
       </div>
